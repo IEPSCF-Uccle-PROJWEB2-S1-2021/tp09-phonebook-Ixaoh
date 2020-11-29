@@ -1,0 +1,33 @@
+<%- include('header'); -%>
+<div class="container">
+  <h1><%= title %></h1>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="column">Last Name</th>
+          <th scope="column">First Name</th>
+          <th scope="column">Birth Date</th>
+          <th scope="column">Phone Number</th>
+          <th scope="column">Email </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% phones.forEach(function(phone) { -%>
+          <tr>
+            <td><%= phone.lastName %></td>
+            <td><%= phone.firstName %></td>
+            <td><%= phone.birthDate %></td>
+            <td><%= phone.phoneNumber %></td>
+            <td><%= phone.emailAddress %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <p><a href="/phones/new" class="btn btn-primary">Add a new contact...</a></p>
+  </div>
+</div>
+<%- include('footer') -%>
