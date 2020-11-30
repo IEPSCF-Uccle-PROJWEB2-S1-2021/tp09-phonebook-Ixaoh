@@ -1,33 +1,115 @@
 <%- include('header'); -%>
+
+<!-- Partie Liste déjà créée -->
 <div class="container">
   <h1><%= title %></h1>
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="column">Last Name</th>
-          <th scope="column">First Name</th>
-          <th scope="column">Birth Date</th>
-          <th scope="column">Phone Number</th>
-          <th scope="column">Email </th>
 
-        </tr>
-      </thead>
-      <tbody>
-        <% phones.forEach(function(phone) { -%>
+  <div class="card mb-5">
+    <div class="card-body">
+      <h2 cladd="card-title">
+        Library content
+        <button type="button" class="btn btn-outline-secondary float-right" id="refresh-button">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-repeat" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+          </svg>
+        </button>
+      </h2>
+      <div class="spinner-border" role="status" id="loading-spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <table class="table d-none" id="phone-table">
+        <thead>
           <tr>
-            <td><%= phone.lastName %></td>
-            <td><%= phone.firstName %></td>
-            <td><%= phone.birthDate %></td>
-            <td><%= phone.phoneNumber %></td>
-            <td><%= phone.emailAddress %></td>
+            <th scope="column">Last Name</th>
+            <th scope="column">First Name</th>
+            <th scope="column">Birth Date</th>
+            <th scope="column">Phone Number</th>
+            <th scope="column">Email </th>
           </tr>
-        <% }); %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="alert alert-danger d-none" role="alert" id="loading-alert">
+        Cannot load the list of contacts.
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <p><a href="/phones/new" class="btn btn-primary">Add a new contact...</a></p>
+
+
+<!-- Partie ajouter contact -->
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">New contact</h2>
+    <div class="alert alert-danger d-none" role="alert" id="sending-failure">
+      Could not create this new contact.
+    </div>
+    <form class="needs-validation" novalidate id="phone-form">
+      <div class="mb-3">
+        <label for="lastNameInput" class="form-label">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          required
+          minlength="3"
+          placeholder="Dupont"
+          id="lastNameInput"
+          class="form-control"
+        />
+        <div class="invalid-feedback">Last Name is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="firstNameInput" class="form-label">first Name</label>
+    <input
+      type="text"
+      name="firstName"
+      required
+      minlength="3"
+      placeholder="Roger"
+      id="firstNameInput"
+      class="form-control"
+    />
+    <div class="invalid-feedback">first name is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="birthDateInput" class="form-label">birth Date</label>
+        <input
+          type="date"
+          name="birthDate"
+          placeholder="1990-01-01"
+          id="birthDaysInput"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumberInput" class="form-label">Phones Number</label>
+        <input
+          type="number"
+          name="phoneNumber"
+          minlength="10"
+          id="phoneNumberInput"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="emailAddressInput" class="form-label">email Address</label>
+        <input
+          type="email"
+          name="emailAddress"
+          id="emailAddressInput"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="reset" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
   </div>
 </div>
+</div>
+
+<script src="/js/phone-script.js" defer></script>
 <%- include('footer') -%>
