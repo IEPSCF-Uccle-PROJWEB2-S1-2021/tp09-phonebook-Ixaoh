@@ -47,6 +47,7 @@
     </div>
     <form class="needs-validation" novalidate id="phone-form">
       <div class="mb-3">
+        <!-- Last Name -->
         <label for="lastNameInput" class="form-label">Last Name</label>
         <input
           type="text"
@@ -60,40 +61,43 @@
         <div class="invalid-feedback">Last Name is required</div>
       </div>
       <div class="mb-3">
+        <!-- first Name  -->
         <label for="firstNameInput" class="form-label">first Name</label>
-    <input
-      type="text"
-      name="firstName"
-      required
-      minlength="3"
-      placeholder="Roger"
-      id="firstNameInput"
-      class="form-control"
-    />
+        <input
+           type="text"
+            name="firstName"
+            required
+            minlength="3"
+            placeholder="Roger"
+            id="firstNameInput"
+           class="form-control"
+        />
     <div class="invalid-feedback">first name is required</div>
       </div>
       <div class="mb-3">
+        <!-- Birth Date -->
         <label for="birthDateInput" class="form-label">birth Date</label>
         <input
           type="date"
           name="birthDate"
           placeholder="1990-01-01"
-          id="birthDaysInput"
+          id="birthDateInput"
           class="form-control"
         />
       </div>
       <div class="mb-3">
+        <!-- Phone Number -->
         <label for="phoneNumberInput" class="form-label">Phones Number</label>
         <input
           type="number"
           name="phoneNumber"
-          minlength="10"
+          minlength="5"
           id="phoneNumberInput"
           class="form-control"
         />
       </div>
-
       <div class="mb-3">
+        <!-- Email  -->
         <label for="emailAddressInput" class="form-label">email Address</label>
         <input
           type="email"
@@ -109,7 +113,7 @@
     </form>
   </div>
 </div>
-</div>
+
 
 <script src="/js/phone-script.js" defer></script>
 <%- include('footer') -%>

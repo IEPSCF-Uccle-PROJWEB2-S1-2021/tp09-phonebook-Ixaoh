@@ -58,7 +58,7 @@ const phoneForm = document.getElementById('phone-form');
 const lastNameInput = document.getElementById('lastNameInput');
 const firstNameInput = document.getElementById('firstNameInput');
 const phoneNumberInput = document.getElementById('phoneNumberInput');
-const birthDateInput = document.getElementById('birthDateInputInput');
+const birthDateInput = document.getElementById('birthDateInput');
 const emailAddressInput = document.getElementById('emailAddressInput');
 const sendingFailure = document.getElementById('sending-failure');
 
@@ -71,8 +71,8 @@ function sendForm() {
   const data = {
     lastName: lastNameInput.value,
     firstName: firstNameInput.value,
-    phoneNumber: phoneNumberInput.value,
     birthDate : birthDateInput.value,
+    phoneNumber: phoneNumberInput.value,
     emailAddress : emailAddressInput.value,
   };
 
