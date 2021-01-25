@@ -35,17 +35,17 @@ Vous trouverez les fonctions de validation et de nettoyage supportées par expre
 
 ## Tâches
 
-* [ ] Construisez un formulaire pour encoder une nouvelle entrée dans votre répertoire.
+* [X] Construisez un formulaire pour encoder une nouvelle entrée dans votre répertoire.
       Le serveur doit valider et nettoyer les données du formulaire selon la description donnée ci-dessus.
       En cas d'erreur, une réponse avec un code `400` sera renvoyée.
       Le navigateur doit également valider autant que possible selon les mêmes règles à l'aide des attributs HTML5.
-* [ ] Construisez un tableau affichant les entrées déjà encodées dans le répertoire.
+* [X] Construisez un tableau affichant les entrées déjà encodées dans le répertoire.
       Le tableau sera stocké dans la mémoire du serveur, exactement comme l'exemple présenté durant la leçon.
-* [ ] L'envoi du formulaire et la mise à jour du tableau doivent être réalisés avec AJAX et JSON.
-* [ ] Le formulaire et le tableau seront présentés sur la même page sur `GET /`.
-* [ ] Le formulaire d'encodage répondra sur `POST /api/phonebook`.
-* [ ] La liste des entrées du répertoire sera disponible sur `GET /api/phonebook`.
-* [ ] Les noms des propriétés JSON respecteront scrupuleusement l'orthographe proposée.
+* [X] L'envoi du formulaire et la mise à jour du tableau doivent être réalisés avec AJAX et JSON.
+* [X] Le formulaire et le tableau seront présentés sur la même page sur `GET /`.
+* [X] Le formulaire d'encodage répondra sur `POST /api/phonebook`.
+* [X] La liste des entrées du répertoire sera disponible sur `GET /api/phonebook`.
+* [X] Les noms des propriétés JSON respecteront scrupuleusement l'orthographe proposée.
 
 ## Remarque
 

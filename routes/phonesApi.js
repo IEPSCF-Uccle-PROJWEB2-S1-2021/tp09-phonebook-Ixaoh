@@ -33,7 +33,7 @@ function requireAcceptsJson(req, res, next) {
 router.all('*', requireAcceptsJson);
 
 router.get('/', (req, res, next) => {
-  res. json({ phones });
+  res.json({ phones });
 });
 
 router.post(
