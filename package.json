@@ -15,7 +15,7 @@
     "http-errors": "^1.8.0",
     "livereload": "^0.9.1",
     "morgan": "^1.10.0",
-    "validator": "^13.1.17"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "eslint": "^7.13.0",
